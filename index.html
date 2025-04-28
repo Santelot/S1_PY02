@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playbook - Sesión 2: ¡Manos al Diseño! – Modelando el Núcleo 3D</title>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 0; padding: 0; color: #333; line-height: 1.6; }
+        .container { max-width: 1000px; margin: auto; padding: 20px; }
+        .header { background-color: #ffa500; color: white; text-align: center; padding: 10px; } /* Orange Accent */
+        .activity { margin-bottom: 20px; }
+        details > summary {
+            background-color: #ffa500; /* Orange Accent */
+            color: white;
+            padding: 10px;
+            cursor: pointer;
+            margin-bottom: 10px;
+            font-weight: bold;
+            list-style: none; /* Hide the default marker */
+            display: flex; /* Use flexbox */
+            justify-content: space-between; /* Space between title and time */
+        }
+        details > summary::-webkit-details-marker {
+            display: none; /* Hide the default marker in Webkit browsers */
+        }
+        details > summary::before {
+            content: '▶ '; /* Collapsed state marker */
+            margin-right: 5px;
+        }
+        details[open] > summary::before {
+            content: '▼ '; /* Expanded state marker */
+        }
+        .content { display: block; padding: 10px; border: 1px solid #ddd; margin-bottom: 10px; margin-top: -10px; border-top: none;} /* Changed display to block */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            text-align: left;
+            vertical-align: top;
+        }
+        span[style*="color: red;"] {
+            font-weight: bold;
+        }
+         ul, ol {
+            margin-top: 0;
+            margin-bottom: 10px;
+            padding-left: 20px;
+        }
+        li {
+            margin-bottom: 5px;
+        }
+        .time-title { margin-bottom: 20px; text-align: center; font-size: 1.2em; color: #555;} /* Style for static title */
+        .dialogue-notes {
+             font-style: italic;
+             color: #555;
+             margin-top: 5px;
+             display: block; /* Ensure notes appear on a new line */
+        }
+    </style>
+    <script>
+        // No specific JS needed for this structure, basic HTML5 <details> handles toggle.
+    </script>
+</head>
+<body>
+    <div class="header">
+        <h1>Playbook - Sesión 2: ¡Manos al Diseño! – Modelando el Núcleo 3D</h1>
+    </div>
+    <div class="container">
+        <h2 class="time-title">Tiempo efectivo de clase: 40 minutos</h2>
+
+        <!-- Resumen de Sesión -->
+        <details id="activity-0" class="activity" open>
+            <summary>📝 Resumen de Sesión</summary>
+            <div class="content">
+                <table>
+                    <tr>
+                        <td style="width: 50%; padding: 10px; border-right: 1px solid #ddd;">
+                            <strong>🎯 Objetivo de la Sesión:</strong>
+                            <ul>
+                                <li>Avanzar significativamente en el modelado 3D de los componentes del núcleo funcional (MVP) en Tinkercad.</li>
+                                <li>Utilizar el flujo Kanban para gestionar y visualizar el progreso del modelado.</li>
+                                <li>Poner en práctica los roles 3D asignados en la sesión anterior.</li>
+                            </ul>
+                        </td>
+                        <td style="width: 50%; padding: 10px;">
+                            <strong>🔑 Entregable Clave de la Sesión:</strong>
+                            <ul>
+                                <li>Componentes iniciales del Modelo 3D Núcleo modelados en Tinkercad.</li>
+                                <li>Tareas movidas en el tablero Kanban reflejando el progreso (de "Por Hacer" a "Modelando", y potencialmente a "Revisando Diseño").</li>
+                                <li>Experiencia práctica de los roles 3D en acción.</li>
+                            </ul>
+                             <strong>🔧 Preparación Previa Sugerida:</strong>
+                            <ol>
+                                <li>Asegurar acceso a Tinkercad para todos los equipos.</li>
+                                <li>Tener listos los tableros Kanban (físicos o digitales) de la sesión anterior.</li>
+                                <li>Tener a mano la definición del Modelo 3D Núcleo (MVP) de cada equipo.</li>
+                                <li>Revisar las funciones básicas de Tinkercad (formas, agrupar, hueco, alinear) para poder dar soporte.</li>
+                                <li>Tener lista la presentación de diapositivas sugerida.</li>
+                            </ol>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </details>
+
+        <!-- Desarrollo de la Sesión -->
+
+        <!-- Actividad 1: ¡Stand-up de Modeladores! -->
+        <details id="activity-1" class="activity">
+            <summary>🚀 Actividad 1: ¡Stand-up de Modeladores! <span>⏰ Tiempo: 5 minutos</span></summary>
+            <div class="content">
+                <table>
+                    <tr>
+                        <th style="width: 50%;">Acción</th>
+                        <th style="width: 50%;">Diálogo del Maestro</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Paso 1: (1 min) Bienvenida y objetivo del stand-up.</strong>
+                            <br>(Proyectar Diapositiva 1: Título Sesión 2 + Icono Stand-up 🚀)
+                            <br>Reunir a los equipos brevemente.
+                        </td>
+                        <td>
+                            "¡Equipos, bienvenidos a la Sesión 2: Manos al Diseño! Hoy nos metemos de lleno en Tinkercad. Para empezar, haremos un 'Stand-up' rápido, una reunión breve para sincronizarnos."
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                            <strong>Paso 2: (3 min) Actualización rápida por equipo.</strong>
+                            <br>El Modelador/a de cada equipo responde brevemente:
+                            <ul>
+                                <li>¿Qué se modeló? (Nada aún, es la primera tarea)</li>
+                                <li>¿Qué se hará hoy? (La primera tarea en 'Modelando')</li>
+                                <li>¿Dudas con herramientas Tinkercad?</li>
+                            </ul>
+                            <br>(Proyectar Diapositiva 2: Stand-up Rápido - Preguntas Clave)
+                            <br>Gestionar el tiempo para que sea ágil.
+                        </td>
+                        <td>
+                            "Muy bien, Modelador/a de cada equipo, cuéntanos rápido: ¿Cuál es la primera tarea que tienes en 'Modelando'? ¿Tienes alguna duda inicial sobre cómo empezarla o sobre alguna herramienta de Tinkercad (formas básicas, mover, escalar)?"
+                             <br><br>
+                             <em>(Escuchar brevemente a cada Modelador/a. Anotar dudas comunes para abordarlas durante el Modelado Intensivo).</em>
+                             <br><br>
+                             "Perfecto, el objetivo de hoy es que los Modeladores avancen lo máximo posible en esas tareas iniciales del núcleo."
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                            <strong>Paso 3: (1 min) Revisión del Kanban.</strong>
+                            <br>Mirar brevemente los tableros Kanban. Confirmar que cada equipo tiene al menos una tarea en "Modelando".
+                        </td>
+                        <td>
+                             "Echemos un vistazo rápido a sus Kanbans... ¡Excelente! Todos tienen su primera misión en 'Modelando'. ¡Listos para empezar!"
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </details>
+
+        <!-- Actividad 2: ¡Modelado Intensivo! -->
+        <details id="activity-2" class="activity">
+            <summary>⚙️ Actividad 2: ¡Modelado Intensivo! <span>⏰ Tiempo: 30 minutos</span></summary>
+            <div class="content">
+                <table>
+                     <tr>
+                        <th style="width: 50%;">Acción</th>
+                        <th style="width: 50%;">Diálogo del Maestro</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <strong>Paso 1: (2 min) Instrucciones para el Modelado Intensivo.</strong>
+                            <br>Dirigir a los equipos a sus puestos de trabajo (computadoras con Tinkercad).
+                            <br>(Proyectar Diapositiva 3: ¡Modelado Intensivo! - Iconos Roles + Tinkercad)
+                            <br>Recordar las responsabilidades de cada rol durante esta fase.
+                        </td>
+                        <td>
+                            "¡Ahora sí, la fase de Modelado Intensivo! Tienen 30 minutos para trabajar enfocados en sus roles:"
+                            <br><br>
+                            "🔹 <strong>Modelador/a 3D (🛠️):</strong> ¡A Tinkercad! Empieza a construir la tarea que tienes en 'Modelando'. Usa formas básicas, agrúpalas, usa huecos si es necesario, alinea... ¡Dale forma a esa primera pieza del núcleo!"
+                            <br>
+                            "🔹 <strong>Validador/a 3D (✅):</strong> Tu misión ahora es prepararte. Piensa: ¿Cómo vas a revisar lo que modele tu compañero/a? ¿Qué medidas clave hay que verificar? ¿La alineación es importante para esa pieza? Observa el proceso, ¡pero sin interrumpir constantemente!"
+                            <br>
+                            "🔹 <strong>Arquitecto/a 3D (👤):</strong> ¡Tu rol es clave! Apoya al Modelador/a si tiene dudas técnicas o necesita ideas. Supervisa que el diseño siga el plan del núcleo. Mantén el backlog organizado. ¡Estás al mando de la visión general!"
+                            <br><br>
+                            "¡A trabajar, equipos! ¡Concentración y colaboración!"
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                            <strong>Paso 2: (25 min) Trabajo en equipo y soporte del facilitador.</strong>
+                            <br>Equipos trabajan en Tinkercad según sus roles.
+                            <br>El facilitador circula, observa, resuelve dudas puntuales (especialmente las anotadas en el stand-up), y ofrece apoyo técnico discreto al Modelador/a o guía al Arquitecto/a si es necesario.
+                            <br>Recordar herramientas clave de Tinkercad si surgen preguntas generales (alinear, agrupar, hueco).
+                            <br>(Proyectar Diapositiva 4: Herramientas Tinkercad Clave - Iconos/GIFs cortos de Alinear, Agrupar, Hueco, Regla - Opcional)
+                        </td>
+                        <td>
+                            <em>(Durante esta fase, el facilitador no da un diálogo general, sino que interactúa individualmente con los equipos según sea necesario).</em>
+                             <br><br>
+                             <span class="dialogue-notes">Ejemplos de interacciones:</span>
+                             <br>
+                             <span class="dialogue-notes">"Modelador/a, ¿recuerdas cómo usar la herramienta 'Alinear' para centrar esas dos piezas?"</span>
+                             <br>
+                             <span class="dialogue-notes">"Validador/a, ¿ya pensaste qué medidas vas a comprobar cuando esta pieza esté lista?"</span>
+                             <br>
+                             <span class="dialogue-notes">"Arquitecto/a, ¿esta forma que está creando el modelador se ajusta bien a la idea principal del T-Bar?"</span>
+                             <br>
+                             <span class="dialogue-notes">"Equipo, si necesitan hacer un agujero, recuerden usar una forma en modo 'Hueco' y luego agruparla con la forma sólida."</span>
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                            <strong>Paso 3: (3 min) Mover tareas a "Revisando Diseño".</strong>
+                            <br>Si un Modelador/a considera que ha completado una tarea según la descripción del backlog:
+                            <ul>
+                                <li>Informa al Arquitecto/a 3D.</li>
+                                <li>El Arquitecto/a 3D verifica brevemente si cumple lo básico y mueve la tarjeta de "Modelando" (⚙️) a "Revisando Diseño" (🧐) en el Kanban.</li>
+                            </ul>
+                            <br>Animar a mover las tareas si están listas para una primera revisión.
+                        </td>
+                        <td>
+                            "Modeladores, si creen que han terminado una tarea tal como la definieron en el backlog, avisen a su Arquitecto/a."
+                            <br><br>
+                            "Arquitectos/as, si el Modelador/a les indica que una tarea está lista, denle un vistazo rápido para asegurar que lo básico está hecho y muevan esa tarjeta de 'Modelando' a 'Revisando Diseño' en su Kanban. ¡Es hora de que el Validador/a se prepare para la próxima sesión!"
+                            <br><span class="dialogue-notes">(Esto prepara el terreno para la Sesión 3, enfocada en la validación).</span>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </details>
+
+        <!-- Actividad 3: ¡Cierre de Avance! -->
+        <details id="activity-3" class="activity">
+            <summary>📊 Actividad 3: ¡Cierre de Avance! <span>⏰ Tiempo: 5 minutos</span></summary>
+            <div class="content">
+                 <table>
+                     <tr>
+                        <th style="width: 50%;">Acción</th>
+                        <th style="width: 50%;">Diálogo del Maestro</th>
+                    </tr>
+                    <tr>
+                        <td>
+                             <strong>Paso 1: (2 min) Detener el modelado y revisar Kanban.</strong>
+                             <br>Indicar a los equipos que pausen el trabajo en Tinkercad.
+                             <br>Pedirles que actualicen su Kanban si hubo algún movimiento de última hora.
+                             <br>(Proyectar Diapositiva 5: Cierre de Avance - Icono Kanban + Preguntas)
+                        </td>
+                        <td>
+                            "¡Tiempo, equipos! Pausa en el modelado por favor. Asegúrense de que su tablero Kanban refleje el estado actual de sus tareas. Si algo se movió a 'Revisando Diseño' justo al final, actualícenlo."
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                             <strong>Paso 2: (2 min) Contar tareas y preparar próxima sesión.</strong>
+                             <br>Pedir a cada equipo que cuente rápidamente:
+                             <ul>
+                                 <li>¿Cuántas tareas quedan en "Modelando" (⚙️)?</li>
+                                 <li>¿Cuántas tareas están en "Revisando Diseño" (🧐)?</li>
+                             </ul>
+                             <br>Preguntar si están listos para la validación en la siguiente sesión.
+                        </td>
+                        <td>
+                             "Rápidamente, cada equipo, cuenten: ¿Cuántas tareas tienen ahora mismo en la columna 'Modelando'? ¿Y cuántas lograron mover a 'Revisando Diseño'?"
+                             <br><br>
+                             <em>(Escuchar brevemente los números de un par de equipos para tener una idea del progreso general).</em>
+                             <br><br>
+                             "¡Bien! Las tareas en 'Revisando Diseño' son las que el Validador/a examinará en detalle en la próxima sesión. Validador/a, ¿te sientes preparado/a para empezar a revisar esas piezas?"
+                        </td>
+                    </tr>
+                     <tr>
+                        <td>
+                             <strong>Paso 3: (1 min) Cierre final y guardado.</strong>
+                             <br>Recordar guardar el trabajo en Tinkercad.
+                         </td>
+                        <td>
+                             "¡Excelente avance hoy, equipos! Han empezado a dar vida a sus Modelos Núcleo."
+                             <br><br>
+                             "¡MUY IMPORTANTE! Antes de irnos, asegúrense de GUARDAR su proyecto en Tinkercad. Pónganle un nombre claro que incluya el nombre del equipo y 'Núcleo_V1', por ejemplo: 'EquipoAlfa_Nucleo_V1'."
+                             <br><br>
+                             "¡Nos vemos en la Sesión 3 para la Revisión de Diseño!"
+                         </td>
+                    </tr>
+                </table>
+            </div>
+        </details>
+
+    </div> <!-- Fin del container -->
+</body>
+</html>
